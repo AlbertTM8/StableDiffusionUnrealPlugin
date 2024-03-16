@@ -4,24 +4,23 @@ import os
 import unreal
 def append_path():
 
-    # # Get the directory of the current script
-    # script_dir = Path(__file__).parent.absolute()
+    # Get the directory of the current script
+    script_dir = Path(__file__).parent.absolute()
 
-    # # Add the script directory to sys.path if it's not already there
-    # if str(script_dir) not in sys.path:
-    #     sys.path.append(str(script_dir))
+    # Add the script directory to sys.path if it's not already there
+    if str(script_dir) not in sys.path:
+        sys.path.append(str(script_dir))
 
-    # # Construct the path to the 'site-packages' directory
-    # parent_dir = script_dir.parent
-    # parent_dir = script_dir.parent
-    # target_path = parent_dir / "site-packages"
+    # Construct the path to the 'site-packages' directory
+    parent_dir = script_dir.parent
+    parent_dir = script_dir.parent
+    target_path = parent_dir / "site-packages"
 
-    # # Add the 'site-packages' directory to sys.path if it's not already there
-    # if str(target_path) not in sys.path:
-    #     sys.path.append(str(target_path))
+    # Add the 'site-packages' directory to sys.path if it's not already there
+    if str(target_path) not in sys.path:
+        sys.path.append(str(target_path))
 
-    # sys.path = [p for p in sys.path if p is not None]
-    print(sys.path)
+    sys.path = [p for p in sys.path if p is not None]
     
 
 def Menu():

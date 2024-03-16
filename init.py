@@ -1,12 +1,18 @@
-
 import unreal
 import subprocess
-# import pkg_resources
 from pathlib import Path
+import os
+import sys 
 
 PYTHON_INTERPRETER_PATH = unreal.get_interpreter_executable_path()
 assert Path(PYTHON_INTERPRETER_PATH).exists(), f"Python not found at '{PYTHON_INTERPRETER_PATH}'"
+file_path = Path(PYTHON_INTERPRETER_PATH)
+parent_dir = file_path.parent
+sitepackages = os.path.join(parent_dir, "lib")
+sitepackages = os.path.join(sitepackages, "site-packages")
+sys.path.append(sitepackages)
 
+print(sitepackages)
 def pip_install(packages):
     # dont show window
     info = subprocess.STARTUPINFO()
